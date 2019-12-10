@@ -8,14 +8,14 @@ def directors_totals(nds)
  
   # We need to traverse the given NDS and allocate the director names as keys and the total revenue of their movies as values of a new hash. 
   
-#   Closely following this example in mind:
-#
-#   hash = {
-#   "1st Director's Name" => 1234567890,
-#   "2nd Director's Name" => 1234577890,
-#   "3rd Director's Name" => 1234709136,
-#   ...
-#   }
+  #   Closely following this example in mind:
+  #
+  #   hash = {
+  #   "1st Director's Name" => 1234567890,
+  #   "2nd Director's Name" => 1234577890,
+  #   "3rd Director's Name" => 1234709136,
+  #   ...
+  #   }
   
   # pp nds - needed to verify that we are working with the same NDS
   
