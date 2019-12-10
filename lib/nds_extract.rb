@@ -25,7 +25,7 @@ def directors_totals(nds)
   
   idx = 0 
   
-  while idx < nds.size # this will loop over each director hash.
+  while idx < nds.size # loop over each director hash.
     inner_idx = 0
     
     dir_mov = nds[idx][:movies] # as the idx increases we will have access to the list of movies of each director.
