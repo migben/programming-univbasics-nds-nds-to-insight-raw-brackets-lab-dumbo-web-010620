@@ -46,7 +46,7 @@ def directors_totals(nds)
   
   
   
-  names_revenue
+  names_revenue # return the final hash with the directors and their total movie revenue
 end
 
 # directors_totals(directors_database) verified on irb that we are working with the same NDS that we had on the prior lesson.
