@@ -36,7 +36,7 @@ def directors_totals(nds)
     dir_key = 0 # setting our current key director with a default value of 0. This will allow us to add the total revenue from all their directed movies
     
     while inner_idx < dir_mov.size # will loop over the list of movies of each director separately 
-        names_revenue[nds[idx][:name]] += dir_mov[inner_idx][:worldwide_gross] # adding the total revenue of their movies to the current key / director 
+        dir_key += dir_mov[inner_idx][:worldwide_gross] # adding the total revenue of their movies to the current key / director 
 
 
         inner_idx += 1 # increasing the inner index to loop over the list of movies
