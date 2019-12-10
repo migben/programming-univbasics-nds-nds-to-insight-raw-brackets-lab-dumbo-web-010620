@@ -1,22 +1,48 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 
+# I've copied the NDS used on this problem at a repl.it session. https://repl.it/@Mius00/Ruby-Playground-1 This made it easier for me to go over how to approach this exercise.
+
 def directors_totals(nds)
-  # Remember, it's always OK to pretty print what you get *in* to make sure
-  # that you know what you're starting with!
-  #
-  #
-  # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
-  result = {
-  }
-  #
-  # Use loops, variables and the accessing method, [], to loop through the NDS
-  # and total up all the
-  # ...
-  # ...
-  # ...
-  #
-  #
-  # Be sure to return the result at the end!
-  nil
+  
+ 
+  # The goal of this lesson is to replicate the given example in the description. We need to traverse the given NDS and allocate the director names as keys and the total revenue of their movies as values of a new hash. 
+  
+#   Closely following this example in mind:
+#   hash = {
+#   "1st Director's Name" => 1234567890,
+#   "2nd Director's Name" => 1234577890,
+#   "3rd Director's Name" => 1234709136,
+#   ...
+# }
+  
+  # pp nds - needed to verify that we are working with the same NDS
+  
+  # at first glance it looks intimidating and complicated, as the way all our data is being nested. However, its only 3 layers/levels of data.
+  
+  names_revenue = { }
+  
+  idx = 0 
+  
+  while idx < nds.size # this will loop over each director.
+    inner_idx = 0
+    dir_mov = nds[idx][:movies] # as the idx increases we will have access to the list of movies of each director.
+    
+    names_revenue[nds[idx][:name]] = 0 # setting our current key director with a default value of 0. This will allow us to add the total revenue from all their directed movies
+    
+    while inner_idx < dir_mov.size # will loop over the list of movies of each director separately 
+        names_revenue[nds[idx][:name]] += dir_mov[inner_idx][:worldwide_gross] # adding the total revenue of their movies to the current key / director 
+
+
+        inner_idx += 1 # increasing the inner index to loop over the list of movies
+    end
+    
+    idx += 1
+  end
+  
+  
+  
+  names_revenue
 end
+
+# directors_totals(directors_database) verified on irb that we are working with the same NDS that we had on the prior lesson.
