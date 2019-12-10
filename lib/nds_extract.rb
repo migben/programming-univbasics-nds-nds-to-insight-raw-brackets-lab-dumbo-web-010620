@@ -31,7 +31,7 @@ def directors_totals(nds)
     dir_mov = nds[idx][:movies] # as the idx increases we will have access to the list of movies of each director.
     
     
-    names_revenue[nds[idx][:name]] = 0 # assigning our current key director with a default value of 0. This will allow us to add the total revenue from all their directed movies
+    names_revenue[nds[idx][:name]] = 0 # assigning our current director-key with a default value of 0. This will allow us to add the total revenue from all their directed movies
     
     while inner_idx < dir_mov.size # will loop over the list of movies of each director separately 
     
